@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: hrpsys-base manual 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 16:06+0900\n"
-"PO-Revision-Date: 2014-12-12 17:15+0900\n"
+"PO-Revision-Date: 2014-12-12 18:22+0900\n"
 "Last-Translator: Yosuke Matsusaka <yosuke.matsusaka@gmail.com>\n"
 "Language-Team:  <yosuke.matsusaka@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -123,11 +123,16 @@ msgid ""
 "simulation world (explained later) and **python script** is the python "
 "script executed when the simulation start."
 msgstr ""
+"**project file** はシステムの構成を定義するXML形式のファイルです（あとで説明"
+"します）。**python script** はシミュレーション開始時に実行されるPythonスクリ"
+"プトです。"
 
 #: ../../simulator.rst:81
 msgid ""
 "hrpsys-simulator-python command can take same option as the hrpsys-simulator."
 msgstr ""
+"hrpsys-simulator-pythonコマンドはhrpsys-simulatorと同じオプションを使うことが"
+"できます。"
 
 #: ../../simulator.rst:83
 msgid ""
@@ -135,6 +140,10 @@ msgid ""
 "will show interactive prompt where you can control the system and the "
 "simulation interactively using the python commands."
 msgstr ""
+"hrpsys-simulator-pythonコマンドは、システムとシミュレーションの初期化が終わっ"
+"たあと対話的に操作できるプロンプト画面に移行します。プロンプト画面からPython"
+"コマンドを入力することでシミュレーションをインタラクティブに操作することがで"
+"きます。"
 
 #: ../../simulator.rst:86
 msgid "hrpsys-simulator-jython command"
@@ -154,11 +163,16 @@ msgid ""
 "simulation world (explained later) and **python script** is the jython "
 "script executed when the simulation start."
 msgstr ""
+"**project file** はシステムの構成を定義するXML形式のファイルです（あとで説明"
+"します）。**python script** はシミュレーション開始時に実行されるjythonスクリ"
+"プトです。"
 
 #: ../../simulator.rst:94
 msgid ""
 "hrpsys-simulator-jython command can take same option as the hrpsys-simulator."
 msgstr ""
+"hrpsys-simulator-jythonコマンドはhrpsys-simulatorと同じオプションを使うことが"
+"できます。"
 
 #: ../../simulator.rst:96
 msgid ""
@@ -166,6 +180,10 @@ msgid ""
 "will show interactive prompt where you can control the system and the "
 "simulation interactively using the jython commands."
 msgstr ""
+"hrpsys-simulator-jythonコマンドは、システムとシミュレーションの初期化が終わっ"
+"たあと対話的に操作できるプロンプト画面に移行します。プロンプト画面からjython"
+"コマンドを入力することでシミュレーションをインタラクティブに操作することがで"
+"きます。"
 
 #: ../../simulator.rst:99
 msgid "XML project file format"
@@ -177,6 +195,9 @@ msgid ""
 "types of configuration items are distinguished with **class attributes**. "
 "hrpsys-simulator currently has following configuration item types:"
 msgstr ""
+"XML形式のプロジェクトファイルには複数の設定項目があります。各設定項目は"
+"**classアトリビュート**によって識別されます。hrpsys-simulatorには現在以下の設"
+"定タイプがあります。"
 
 #: ../../simulator.rst:106
 msgid "com.generalrobotix.ui.item.GrxRTSItem"
@@ -267,6 +288,8 @@ msgid ""
 "In **com.generalrobotix.ui.item.ModelItem** configuration item type, "
 "following configuration can be used."
 msgstr ""
+"**com.generalrobotix.ui.item.ModelItem**設定アイテムでは、以下の設定ができま"
+"す。"
 
 #: ../../simulator.rst:150
 msgid "Model related configuration"
@@ -277,12 +300,16 @@ msgid ""
 "Attribute \"name\" and \"url\" given to the configuration item itself "
 "specifies the name and location of the model file."
 msgstr ""
+"設定アイテム自身の\"name\"と\"url\"アトリビュートにはそれぞれ名前とモデルファ"
+"イルの場所を設定します。"
 
 #: ../../simulator.rst:154
 msgid ""
 "The name \"isRobot\" specifies if the model will be treated as a robot which "
 "has dynamic parameters."
 msgstr ""
+"\"isRobot\"はモデルを動的パラメータを持ったロボットとして扱うことを設定しま"
+"す。"
 
 #: ../../simulator.rst:157
 msgid "Joint related configuration"
@@ -295,19 +322,23 @@ msgid ""
 "or acceleration of the joint. If not specified, the joint will be configured "
 "to use torque mode."
 msgstr ""
+" \"\\*.mode\"という名前の設定項目は、関節のモードを設定します。\"HighGain\"と"
+"設定されると、関節は角度、角速度、角加速度によって制御することができます。こ"
+"の設定が行われない場合、関節はトルクモードになります。"
 
 #: ../../simulator.rst:160
 msgid "The name \"\\*.angle\" is used to specify initial joint angle."
-msgstr ""
+msgstr "\"\\*.angle\"という名前の設定項目は、初期の関節角を設定します。"
 
 #: ../../simulator.rst:162
 msgid "The name \"\\*.velocity\" is used to specify initial joint velocity."
-msgstr ""
+msgstr "\"\\*.velocity\"という名前の設定項目は、初期の角速度を設定します。"
 
 #: ../../simulator.rst:164
 msgid ""
 "The name \"\\*.angularVelocity\" is used to specify initial angular velocity."
 msgstr ""
+"\"\\*.angularVelocity\"という名前の設定項目は、初期の各運動速度を設定します。"
 
 #: ../../simulator.rst:167
 msgid "Link related configuration"
@@ -318,12 +349,16 @@ msgid ""
 "The name \"\\*.translation\" is used to specify initial translation of the "
 "link in [x, y, z] axis."
 msgstr ""
+"\"\\*.translation\"という設定項目は、[x, y, z]形式の初期のリンク位置を設定し"
+"ます。"
 
 #: ../../simulator.rst:171
 msgid ""
 "The name \"\\*.rotation\" is used to specify initial rotation in VRML "
 "rotation format."
 msgstr ""
+"\"\\*.rotation\"という設定項目はVRMLの角度形式の初期のリンク角度を設定しま"
+"す。"
 
 #: ../../simulator.rst:173
 msgid ""
@@ -333,12 +368,19 @@ msgid ""
 "to convex hull (faster but less accurate). If \"AABB\" is specified, it will "
 "use bounding box for collision detection."
 msgstr ""
+"\"\\*.collisionShape\"という名前の設定項目は干渉チェックに用いられる方法を設"
+"定します。デフォルトでは精度の高い（が時間のかかる）アルゴリズムが用いられま"
+"す。\"convex hull\"と設定されると、形状に凸包が適用されます。処理が高速化され"
+"ますが凹みのあるモデルの干渉チェックの精度が低くなります。\"AABB\"と設定され"
+"ると、干渉チェックにBounding boxが利用されます。"
 
 #: ../../simulator.rst:175
 msgid ""
 "The name \"\\*.NumOfAABB\" is used to specify number of AABB used for "
 "collision detection (smaller will be faster, but less accurate)."
 msgstr ""
+"\"\\*.NumOfAABB\"はAABBの数を設定します。この数が少なくなると高速化されます"
+"が、精度は低くなります。"
 
 #: ../../simulator.rst:178
 msgid "RT-Component related configuration"
@@ -349,16 +391,19 @@ msgid ""
 "The name \"rtcName\" is used to specify the name used to expose the "
 "interface of the model as a RT-Component."
 msgstr ""
+"\"rtcName\"はモデルをRTコンポーネントとして操作する際の名前を設定します。"
 
 #: ../../simulator.rst:182
 msgid ""
 "The name \"inport\" and \"outport\" is used to create inport and outport. "
 "Value is defined in \"[port name]:[elements]:[data type]\"."
 msgstr ""
+"\"inport\"と\"outport\"はRTコンポーネントの入力ポートと出力ポートを作成しま"
+"す。値のフォーマットは\"[port name]:[elements]:[data type]\"です。"
 
 #: ../../simulator.rst:184
 msgid "For input and output ports we can specify following data type:"
-msgstr ""
+msgstr "入力ポートと出力ポートには以下のデータ型を指定することができます:"
 
 #: ../../simulator.rst:187
 msgid "JOINT_VALUE"
@@ -366,7 +411,7 @@ msgstr "JOINT_VALUE"
 
 #: ../../simulator.rst:187
 msgid "Value of joints specified in element part."
-msgstr ""
+msgstr "element部で指定された関節の角度"
 
 #: ../../simulator.rst:190
 msgid "JOINT_VELOCITY"
@@ -374,7 +419,7 @@ msgstr "JOINT_VELOCITY"
 
 #: ../../simulator.rst:190
 msgid "Velocity of joints specified in element part."
-msgstr ""
+msgstr "element部で指定された関節の速度"
 
 #: ../../simulator.rst:193
 msgid "JOINT_ACCELERATION"
@@ -382,7 +427,7 @@ msgstr "JOINT_ACCELERATION"
 
 #: ../../simulator.rst:193
 msgid "Acceleration of joints specified in element part."
-msgstr ""
+msgstr "element部で指定された関節の加速度"
 
 #: ../../simulator.rst:196
 msgid "JOINT_TORQUE"
@@ -390,7 +435,7 @@ msgstr "JOINT_TORQUE"
 
 #: ../../simulator.rst:196
 msgid "Torque of joints specified in element part."
-msgstr ""
+msgstr "element部で指定された関節のトルク"
 
 #: ../../simulator.rst:199
 msgid "ABS_TRANSFORM"
@@ -398,7 +443,7 @@ msgstr "ABS_TRANSFORM"
 
 #: ../../simulator.rst:199
 msgid "Absolute transform of joint specified in element part."
-msgstr ""
+msgstr "element部で指定された関節の絶対座標"
 
 #: ../../simulator.rst:202
 msgid "ABS_VELOCITY"
@@ -406,7 +451,7 @@ msgstr "ABS_VELOCITY"
 
 #: ../../simulator.rst:202
 msgid "Absolute velocity of joint specified in element part."
-msgstr ""
+msgstr "element部で指定された関節の絶対速度"
 
 #: ../../simulator.rst:205
 msgid "ABS_ACCELERATION"
@@ -414,11 +459,11 @@ msgstr "ABS_ACCELERATION"
 
 #: ../../simulator.rst:205
 msgid "Absolute acceleration of joint specified in element part."
-msgstr ""
+msgstr "element部で指定された関節の絶対加速度"
 
 #: ../../simulator.rst:207
 msgid "For inport we can specify following data type:"
-msgstr ""
+msgstr "入力ポートには以下のデータ型を指定することができます:"
 
 #: ../../simulator.rst:210
 msgid "FRAME_RATE"
@@ -426,7 +471,7 @@ msgstr "FRAME_RATE"
 
 #: ../../simulator.rst:210
 msgid "Frame rate of the vision sensor specified in element part."
-msgstr ""
+msgstr "element部で指定された画像センサのフレームレート"
 
 #: ../../simulator.rst:213
 msgid "LIGHT_SWITCH"
@@ -434,11 +479,11 @@ msgstr "LIGHT_SWITCH"
 
 #: ../../simulator.rst:213
 msgid "Switch of the light specified in element part."
-msgstr ""
+msgstr "element部で指定されたライトのオンオフスイッチ"
 
 #: ../../simulator.rst:215
 msgid "For outport we can specify following data type:"
-msgstr ""
+msgstr "出力ポートには以下のデータ型を指定することができます:"
 
 #: ../../simulator.rst:218
 msgid "FORCE_SENSOR"
@@ -454,7 +499,7 @@ msgstr "RATE_GYRO_SENSOR"
 
 #: ../../simulator.rst:221
 msgid "Value of rate gyro sensor."
-msgstr ""
+msgstr "レートジャイロセンサの値"
 
 #: ../../simulator.rst:224
 msgid "ACCELERATION_SENSOR"
@@ -494,7 +539,7 @@ msgstr "GrxCollisionPairItem"
 
 #: ../../simulator.rst:239
 msgid "GrxCollisionPairItem can specify following properties:"
-msgstr ""
+msgstr "GrxCollisionPairItemには以下の設定ができます:"
 
 #: ../../simulator.rst:242
 msgid "objectName1"
@@ -502,7 +547,7 @@ msgstr "objectName1"
 
 #: ../../simulator.rst:242
 msgid "Specifies one object name to detect collision."
-msgstr ""
+msgstr "干渉チェックするオブジェクトの名前を設定します。"
 
 #: ../../simulator.rst:245
 msgid "objectName2"
@@ -510,7 +555,7 @@ msgstr "objectName2"
 
 #: ../../simulator.rst:245
 msgid "Specifies opponent object name to detect collision."
-msgstr ""
+msgstr "干渉チェックする相手のオブジェクトの名前を設定します。"
 
 #: ../../simulator.rst:248
 msgid "jointName1"
@@ -521,6 +566,8 @@ msgid ""
 "Specifies joint name on one object to detect collision. If not specified, "
 "whole the joints of the object body is detected."
 msgstr ""
+"干渉チェックするオブジェクトのリンクの名前を指定します。指定がない場合、その"
+"オブジェクトのすべてのリンクがチェックされます。"
 
 #: ../../simulator.rst:251
 msgid "jointName2"
@@ -531,6 +578,8 @@ msgid ""
 "Specifies joint name on opponent object to detect collision. If not "
 "specified, whole the joints of the object body is detected."
 msgstr ""
+"干渉チェックする相手のオブジェクトのリンクの名前を指定します。指定がない場"
+"合、そのオブジェクトのすべてのリンクがチェックされます。"
 
 #: ../../simulator.rst:254
 msgid "slidingFriction"
@@ -538,7 +587,7 @@ msgstr "slidingFriction"
 
 #: ../../simulator.rst:254
 msgid "Specifies sliding friction between the objects."
-msgstr ""
+msgstr "滑り摩擦係数を設定します。"
 
 #: ../../simulator.rst:257
 msgid "staticFriction"
@@ -546,7 +595,7 @@ msgstr "staticFriction"
 
 #: ../../simulator.rst:257
 msgid "Specifies static friction between the objects."
-msgstr ""
+msgstr "静止摩擦係数を設定します。"
 
 #: ../../simulator.rst:260
 msgid "cullingThresh"
@@ -554,7 +603,7 @@ msgstr "cullingThresh"
 
 #: ../../simulator.rst:260
 msgid "Specifies culling threshold."
-msgstr ""
+msgstr "Cullingしきい値を設定する。"
 
 #: ../../simulator.rst:263
 msgid "Restitution"
@@ -562,7 +611,7 @@ msgstr "Restitution"
 
 #: ../../simulator.rst:263
 msgid "Specifies restitution coefficient."
-msgstr ""
+msgstr "反発係数を設定する。"
 
 #: ../../simulator.rst:266
 msgid "GrxWorldStateItem"
@@ -570,7 +619,7 @@ msgstr "GrxWorldStateItem"
 
 #: ../../simulator.rst:268
 msgid "GrxWorldStateItem can specify following properties:"
-msgstr ""
+msgstr "GrxWorldStateItemには以下のプロパティを設定することができます:"
 
 #: ../../simulator.rst:271
 msgid "totalTime"
@@ -578,7 +627,7 @@ msgstr "totalTime"
 
 #: ../../simulator.rst:271
 msgid "Specify total time of simulation."
-msgstr ""
+msgstr "シミュレーション時間を設定する。"
 
 #: ../../simulator.rst:274
 msgid "timeStep"
@@ -586,7 +635,7 @@ msgstr "timeStep"
 
 #: ../../simulator.rst:274
 msgid "Specify simulation time step."
-msgstr ""
+msgstr "シミュレーションステップを設定する。"
 
 #: ../../simulator.rst:277
 msgid "realTime"
@@ -594,7 +643,7 @@ msgstr "realTime"
 
 #: ../../simulator.rst:277
 msgid "If \"true\" synchronize to real world time."
-msgstr ""
+msgstr "\"true\"の場合、実時間に同期する。"
 
 #: ../../simulator.rst:280
 msgid "gravity"
@@ -610,7 +659,7 @@ msgstr "method"
 
 #: ../../simulator.rst:283
 msgid "If \"EULER\" use euler method. Other, use runge-kutta."
-msgstr ""
+msgstr "\"EULER\"の場合、オイラー法を使う。それ以外はルンゲクッタ法を使う。"
 
 #: ../../simulator.rst:286
 msgid "integrate"
@@ -618,7 +667,7 @@ msgstr "integrate"
 
 #: ../../simulator.rst:286
 msgid "If \"false\" use kinematics only mode."
-msgstr ""
+msgstr "\"false\"に設定された場合、kinematics onlyモードを使う。"
 
 #: ../../simulator.rst:289
 msgid "GrxPythonScriptItem"
@@ -626,7 +675,7 @@ msgstr "GrxPythonScriptItem"
 
 #: ../../simulator.rst:291
 msgid "GrxPythonScriptItem can specify following properties:"
-msgstr ""
+msgstr "GrxPythonScriptItemには以下のプロパティを設定することができます。"
 
 #: ../../simulator.rst:294
 msgid "name"
@@ -634,7 +683,7 @@ msgstr "name"
 
 #: ../../simulator.rst:294
 msgid "Specify name of the script item."
-msgstr ""
+msgstr "スクリプトアイテムの名前を設定する。"
 
 #: ../../simulator.rst:298
 msgid "url"
@@ -642,7 +691,7 @@ msgstr "url"
 
 #: ../../simulator.rst:297
 msgid "Specify url of the python script."
-msgstr ""
+msgstr "PythonスクリプトのURLを設定する。"
 
 #: ../../simulator.rst:301
 msgid "Grx3DView"
@@ -650,7 +699,7 @@ msgstr "Grx3DView"
 
 #: ../../simulator.rst:303
 msgid "Grx3DViewItem can specify following properties:"
-msgstr ""
+msgstr "Grx3DViewItemには以下のプロパティを設定することができます:"
 
 #: ../../simulator.rst:306
 msgid "showScale"
@@ -658,7 +707,7 @@ msgstr "showScale"
 
 #: ../../simulator.rst:306
 msgid "Show scale in simulation screen."
-msgstr ""
+msgstr "シミュレーション画面に目盛を表示する。"
 
 #: ../../simulator.rst:309
 msgid "showCoM"
@@ -666,7 +715,7 @@ msgstr "showCoM"
 
 #: ../../simulator.rst:309
 msgid "Show center of mass in simulation screen."
-msgstr ""
+msgstr "シミュレーション画面に重心を表示する。"
 
 #: ../../simulator.rst:312
 msgid "showCoMonFloor"
@@ -674,7 +723,7 @@ msgstr "showCoMonFloor"
 
 #: ../../simulator.rst:312
 msgid "Show center of mass on the floor in simulation screen."
-msgstr ""
+msgstr "シミュレーション画面の床に重心を投影する。"
 
 #: ../../simulator.rst:315
 msgid "showCollision"
@@ -682,7 +731,7 @@ msgstr "showCollision"
 
 #: ../../simulator.rst:315
 msgid "Visualize collision points in simulation screen."
-msgstr ""
+msgstr "シミュレーション画面に接触点を表示する。"
 
 #: ../../simulator.rst:317
 msgid "eyeHomePosition"
@@ -690,4 +739,4 @@ msgstr "eyeHomePosition"
 
 #: ../../simulator.rst:318
 msgid "Set view angle in simulation screen."
-msgstr ""
+msgstr "シミュレーション画面の視野角を設定する。"
