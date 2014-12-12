@@ -1,0 +1,262 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: hrpsys-base manual 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-12 16:06+0900\n"
+"PO-Revision-Date: 2014-12-12 16:56+0900\n"
+"Last-Translator: Yosuke Matsusaka <yosuke.matsusaka@gmail.com>\n"
+"Language-Team: <yosuke.matsusaka@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../../python.rst:3
+msgid "Scripting in Python"
+msgstr "Pythonを使ったスクリプティング"
+
+#: ../../python.rst:6
+msgid "hrpsys.hrpsysext"
+msgstr ""
+
+#: ../../<autodoc>:1 ../../<autodoc>:1 ../../<autodoc>:1 ../../<autodoc>:1
+msgid "Bases: :class:`Boost.Python.instance`"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.calcCM:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.calcForwardKinematics:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.calcTotalMass:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.creteInPort:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.creteOutPort:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.joint:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.joints:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.link:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.links:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.numJoints:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.numLinks:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.rootLink:1 ../../docstring of
+#: hrpsys.hrpsysext.Body.totalMass:1 ../../docstring of
+#: hrpsys.hrpsysext.Link.addChildLink:1 ../../docstring of
+#: hrpsys.hrpsysext.Link.addCube:1 ../../docstring of
+#: hrpsys.hrpsysext.Link.addShapeFromFile:1 ../../docstring of
+#: hrpsys.hrpsysext.Link.children:1 ../../docstring of
+#: hrpsys.hrpsysext.Link.highlight:1 ../../docstring of
+#: hrpsys.hrpsysext.Link.parent:1 ../../docstring of
+#: hrpsys.hrpsysext.Link.shapes:1 ../../docstring of
+#: hrpsys.hrpsysext.Link.showAxes:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.addCollisionCheckPair:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.bodies:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.body:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.capture:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.clear:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.createBody:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.endless:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.initViewer:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.initialize:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.loadBody:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.loadProject:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.logLength:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.oneStep:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.pause:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.play:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.realTime:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.reset:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.simulate:2 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.simulate:6 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.start:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.stop:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.useBBox:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.wait:1 ../../docstring of
+#: hrpsys.hrpsysext.Simulator.windowSize:1
+msgid "C++ signature :"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.calcCM:2
+msgid "_object* calcCM(PyBody {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.calcForwardKinematics:2
+msgid "void calcForwardKinematics(PyBody {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.calcTotalMass:2
+msgid "double calcTotalMass(PyBody {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.creteInPort:2
+msgid "void creteInPort(PyBody {lvalue},std::string)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.creteOutPort:2
+msgid "void creteOutPort(PyBody {lvalue},std::string)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.joint:2
+msgid "PyLink* joint(PyBody {lvalue},int)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.joints:2
+msgid "_object* joints(PyBody {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.link:2
+msgid "PyLink* link(PyBody {lvalue},std::string)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.links:2
+msgid "_object* links(PyBody {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.numJoints:2
+msgid "int numJoints(PyBody {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.numLinks:2
+msgid "int numLinks(PyBody {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.rootLink:2
+msgid "PyLink* rootLink(PyBody {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Body.totalMass:2
+msgid "double totalMass(PyBody {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Link.addChildLink:2
+msgid "PyLink* addChildLink(PyLink {lvalue},std::string)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Link.addCube:2
+msgid "PyShape* addCube(PyLink {lvalue},double,double,double)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Link.addShapeFromFile:2
+msgid "void addShapeFromFile(PyLink {lvalue},std::string)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Link.children:2
+msgid "_object* children(PyLink {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Link.highlight:2
+msgid "void highlight(PyLink {lvalue},bool)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Link.parent:2
+msgid "PyLink* parent(PyLink {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Link.shapes:2
+msgid "_object* shapes(PyLink {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Link.showAxes:2
+msgid "void showAxes(PyLink {lvalue},bool)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.addCollisionCheckPair:2
+msgid "void addCollisionCheckPair(PySimulator {lvalue},PyBody*,PyBody*)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.bodies:2
+msgid "_object* bodies(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.body:2
+msgid "PyBody* body(PySimulator {lvalue},std::string)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.capture:2
+msgid "void capture(PySimulator {lvalue},std::string)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.clear:2
+msgid "void clear(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.createBody:2
+msgid "PyBody* createBody(PySimulator {lvalue},std::string)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.endless:2
+msgid "void endless(PySimulator {lvalue},bool)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.initViewer:2
+msgid "void initViewer(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.initialize:2
+msgid "void initialize(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.loadBody:2
+msgid "PyBody* loadBody(PySimulator {lvalue},std::string,std::string)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.loadProject:2
+msgid "bool loadProject(PySimulator {lvalue},std::string)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.logLength:2
+msgid "unsigned int logLength(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.oneStep:2
+msgid "bool oneStep(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.pause:2
+msgid "void pause(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.play:2
+msgid "void play(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.realTime:2
+msgid "void realTime(PySimulator {lvalue},bool)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.reset:2
+msgid "void reset(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.simulate:2
+msgid "void simulate(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.simulate:4
+msgid "simulate( (Simulator)arg1, (float)arg2) -> None :"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.simulate:7
+msgid "void simulate(PySimulator {lvalue},double)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.start:2
+msgid "void start(PySimulator {lvalue},double)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.stop:2
+msgid "void stop(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.useBBox:2
+msgid "void useBBox(PySimulator {lvalue},bool)"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.wait:2
+msgid "void wait(PySimulator {lvalue})"
+msgstr ""
+
+#: ../../docstring of hrpsys.hrpsysext.Simulator.windowSize:2
+msgid "void windowSize(PySimulator {lvalue},int)"
+msgstr ""
+
+#: ../../python.rst:14
+msgid "hrpsys.rtm"
+msgstr ""
