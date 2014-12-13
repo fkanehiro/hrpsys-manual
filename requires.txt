@@ -1,0 +1,4 @@
+Sphinx
+sphinx-intl
+sphinx-rtd-theme
+breathe
