@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Simulator &mdash; hrpsys-base manual 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/breathe.css" type="text/css" />
+  
+    <link rel="top" title="hrpsys-base manual 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Scripting in Python" href="python.html"/>
+        <link rel="prev" title="Components" href="components.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> hrpsys-base manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="components.html">Components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="components.html#image-processing-components">Image processing components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="components.html#robot-control-components">Robot control components</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Simulator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hrpsys-simulator-command">hrpsys-simulator command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hrpsys-simulator-python-command">hrpsys-simulator-python command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hrpsys-simulator-jython-command">hrpsys-simulator-jython command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xml-project-file-format">XML project file format</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Scripting in Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python.html#hrpsys-hrpsysext">hrpsys.hrpsysext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#hrpsys-rtm">hrpsys.rtm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Apply to actual hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#replace-the-virtual-device-component-to-real-device-component">Replace the virtual device component to real device component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#create-interface-for-your-own-robot">Create interface for your own robot</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">hrpsys-base manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Simulator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/simulator.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="simulator">
+<h1>Simulator<a class="headerlink" href="#simulator" title="Permalink to this headline">¶</a></h1>
+<p>hrpsys-base provides following system composer integrated with physics simulation.</p>
+<div class="section" id="hrpsys-simulator-command">
+<h2>hrpsys-simulator command<a class="headerlink" href="#hrpsys-simulator-command" title="Permalink to this headline">¶</a></h2>
+<p>The hrpsys-simulator command loads and runs a simulation. It is called like follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ hrpsys-simulator [project file] [options]
+</pre></div>
+</div>
+<p>Where <strong>project file</strong> is the xml file which defines system composition and simulation world (explained later).</p>
+<p>The hrpsys-simulator command has following options:</p>
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-nodisplay">
+<tt class="descname">-nodisplay</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-nodisplay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Headless mode.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-realtime">
+<tt class="descname">-realtime</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-realtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synchronize to real world time.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-usebbox">
+<tt class="descname">-usebbox</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-usebbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use bounding box for collision detection.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-endless">
+<tt class="descname">-endless</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-endless" title="Permalink to this definition">¶</a></dt>
+<dd><p>Endless mode.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-showsensors">
+<tt class="descname">-showsensors</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-showsensors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visualize sensors.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-size">
+<tt class="descname">-size</tt><tt class="descclassname"> [pixels]</tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify window size in pixels.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-no-default-lights">
+<tt class="descname">-no-default-lights</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-no-default-lights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable ambient light (simulation environment will be dark).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-max-edge-length">
+<tt class="descname">-max-edge-length</tt><tt class="descclassname"> [value]</tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-max-edge-length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify maximum length of polygon edge (if exceed, polygon will be divided to improve rendering quality).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-max-log-length">
+<tt class="descname">-max-log-length</tt><tt class="descclassname"> [value]</tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-max-log-length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify maximum size of the log.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-exit-on-finish">
+<tt class="descname">-exit-on-finish</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-exit-on-finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exit the program when the simulation finish.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-record">
+<tt class="descname">-record</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-record" title="Permalink to this definition">¶</a></dt>
+<dd><p>Record the simulation as movie.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-bg">
+<tt class="descname">-bg</tt><tt class="descclassname"> [r] [g] [b]</tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-bg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify background color.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hrpsys-simulator-h">
+<tt class="descname">-h</tt><tt class="descclassname"> --help</tt><a class="headerlink" href="#cmdoption-hrpsys-simulator-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show help message.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="hrpsys-simulator-python-command">
+<h2>hrpsys-simulator-python command<a class="headerlink" href="#hrpsys-simulator-python-command" title="Permalink to this headline">¶</a></h2>
+<p>The hrpsys-simulator-python command loads and runs a simulation. It is called like follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ hrpsys-simulator-python [project file] [python script] [options]
+</pre></div>
+</div>
+<p>Where <strong>project file</strong> is the xml file which defines system composition and simulation world (explained later) and <strong>python script</strong> is the python script executed when the simulation start.</p>
+<p>hrpsys-simulator-python command can take same option as the hrpsys-simulator.</p>
+<p>After the system and the simulation has initialized hrpsys-simulator-python will show interactive prompt where you can control the system and the simulation interactively using the python commands.</p>
+</div>
+<div class="section" id="hrpsys-simulator-jython-command">
+<h2>hrpsys-simulator-jython command<a class="headerlink" href="#hrpsys-simulator-jython-command" title="Permalink to this headline">¶</a></h2>
+<p>The hrpsys-simulator-jython command loads and runs a simulation. It is called like follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ hrpsys-simulator-jython [project file] [jython script] [options]
+</pre></div>
+</div>
+<p>Where <strong>project file</strong> is the xml file which defines system composition and simulation world (explained later) and <strong>python script</strong> is the jython script executed when the simulation start.</p>
+<p>hrpsys-simulator-jython command can take same option as the hrpsys-simulator.</p>
+<p>After the system and the simulation has initialized hrpsys-simulator-jython will show interactive prompt where you can control the system and the simulation interactively using the jython commands.</p>
+</div>
+<div class="section" id="xml-project-file-format">
+<h2>XML project file format<a class="headerlink" href="#xml-project-file-format" title="Permalink to this headline">¶</a></h2>
+<p>Project file is in XML format consists of plural configuration items.
+Each types of configuration items are distinguished with <strong>class attributes</strong>.
+hrpsys-simulator currently has following configuration item types:</p>
+<dl class="docutils">
+<dt>com.generalrobotix.ui.item.GrxRTSItem</dt>
+<dd>Defines initialization and connection of RT-components.</dd>
+<dt>com.generalrobotix.ui.item.GrxModelItem</dt>
+<dd>Defines robot model and initial attitudes.</dd>
+<dt>com.generalrobotix.ui.item.GrxCollisionPairItem</dt>
+<dd>Defines collision pair of two objects.</dd>
+<dt>com.generalrobotix.ui.item.GrxWorldStateItem</dt>
+<dd>Defines physics simulation parameters.</dd>
+<dt>com.generalrobotix.ui.item.GrxPythonScriptItem</dt>
+<dd>Defines python script to be run behind the simulation.</dd>
+<dt>com.generalrobotix.ui.view.Grx3DView</dt>
+<dd>Defines initial view angle and visualization settings.</dd>
+</dl>
+<p>There are some other configuration item types such as com.generalrobotix.ui.grxui.GrxUIPerspectiveFactory. These are the legacy item types used in previous eclipse based OpenHRP simulator. These items are kept for compatibility reason and has no effect to hrpsys-simulator.</p>
+<div class="section" id="grxrtsitem">
+<h3>GrxRTSItem<a class="headerlink" href="#grxrtsitem" title="Permalink to this headline">¶</a></h3>
+<p>In <strong>com.generalrobotix.ui.item.GrxRTSItem</strong> configuration item type, the name &#8220;<em>.period&#8221; is used to specify execution cycle of each RT-components. The name &#8220;</em>.factory&#8221; is used to specify the name of shared library used to create the instance of the component. Properties with name &#8220;connection&#8221; specify the connection between the components.</p>
+<p>Following is the example of the configuration:</p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">&lt;item</span> <span class="na">class=</span><span class="s">&quot;com.generalrobotix.ui.item.GrxRTSItem&quot;</span> <span class="na">name=</span><span class="s">&quot;untitled&quot;</span> <span class="na">select=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;PA10Controller0.period&quot;</span> <span class="na">value=</span><span class="s">&quot;0.005&quot;</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;HGcontroller0.period&quot;</span> <span class="na">value=</span><span class="s">&quot;0.005&quot;</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;HGcontroller0.factory&quot;</span> <span class="na">value=</span><span class="s">&quot;HGcontroller&quot;</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;connection&quot;</span> <span class="na">value=</span><span class="s">&quot;HGcontroller0.qOut:PA10Controller0.qRef&quot;</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;connection&quot;</span> <span class="na">value=</span><span class="s">&quot;HGcontroller0.dqOut:PA10Controller0.dqRef&quot;</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;connection&quot;</span> <span class="na">value=</span><span class="s">&quot;HGcontroller0.ddqOut:PA10Controller0.ddqRef&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/item&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="grxmodelitem">
+<h3>GrxModelItem<a class="headerlink" href="#grxmodelitem" title="Permalink to this headline">¶</a></h3>
+<p>In <strong>com.generalrobotix.ui.item.ModelItem</strong> configuration item type, following configuration can be used.</p>
+<div class="section" id="model-related-configuration">
+<h4>Model related configuration<a class="headerlink" href="#model-related-configuration" title="Permalink to this headline">¶</a></h4>
+<p>Attribute &#8220;name&#8221; and &#8220;url&#8221; given to the configuration item itself specifies the name and location of the model file.</p>
+<p>The name &#8220;isRobot&#8221; specifies if the model will be treated as a robot which has dynamic parameters.</p>
+</div>
+<div class="section" id="joint-related-configuration">
+<h4>Joint related configuration<a class="headerlink" href="#joint-related-configuration" title="Permalink to this headline">¶</a></h4>
+<p>The name &#8220;*.mode&#8221; is used to specify the mode of the joint. If value &#8220;HighGain&#8221; is set, the joint can be controlled either by angle, velocity or acceleration of the joint. If not specified, the joint will be configured to use torque mode.</p>
+<p>The name &#8220;*.angle&#8221; is used to specify initial joint angle.</p>
+<p>The name &#8220;*.velocity&#8221; is used to specify initial joint velocity.</p>
+<p>The name &#8220;*.angularVelocity&#8221; is used to specify initial angular velocity.</p>
+</div>
+<div class="section" id="link-related-configuration">
+<h4>Link related configuration<a class="headerlink" href="#link-related-configuration" title="Permalink to this headline">¶</a></h4>
+<p>The name &#8220;*.translation&#8221; is used to specify initial translation of the link in [x, y, z] axis.</p>
+<p>The name &#8220;*.rotation&#8221; is used to specify initial rotation in VRML rotation format.</p>
+<p>The name &#8220;*.collisionShape&#8221; is used to specify collision detection method. If not specified, use default (slow but accurate) collision detection algorithm. If &#8220;convex hull&#8221; is specified, it convert the shape to convex hull (faster but less accurate). If &#8220;AABB&#8221; is specified, it will use bounding box for collision detection.</p>
+<p>The name &#8220;*.NumOfAABB&#8221; is used to specify number of AABB used for collision detection (smaller will be faster, but less accurate).</p>
+</div>
+<div class="section" id="rt-component-related-configuration">
+<h4>RT-Component related configuration<a class="headerlink" href="#rt-component-related-configuration" title="Permalink to this headline">¶</a></h4>
+<p>The name &#8220;rtcName&#8221; is used to specify the name used to expose the interface of the model as a RT-Component.</p>
+<p>The name &#8220;inport&#8221; and &#8220;outport&#8221; is used to create inport and outport. Value is defined in &#8220;[port name]:[elements]:[data type]&#8221;.</p>
+<p>For input and output ports we can specify following data type:</p>
+<dl class="docutils">
+<dt>JOINT_VALUE</dt>
+<dd>Value of joints specified in element part.</dd>
+<dt>JOINT_VELOCITY</dt>
+<dd>Velocity of joints specified in element part.</dd>
+<dt>JOINT_ACCELERATION</dt>
+<dd>Acceleration of joints specified in element part.</dd>
+<dt>JOINT_TORQUE</dt>
+<dd>Torque of joints specified in element part.</dd>
+<dt>ABS_TRANSFORM</dt>
+<dd>Absolute transform of joint specified in element part.</dd>
+<dt>ABS_VELOCITY</dt>
+<dd>Absolute velocity of joint specified in element part.</dd>
+<dt>ABS_ACCELERATION</dt>
+<dd>Absolute acceleration of joint specified in element part.</dd>
+</dl>
+<p>For inport we can specify following data type:</p>
+<dl class="docutils">
+<dt>FRAME_RATE</dt>
+<dd>Frame rate of the vision sensor specified in element part.</dd>
+<dt>LIGHT_SWITCH</dt>
+<dd>Switch of the light specified in element part.</dd>
+</dl>
+<p>For outport we can specify following data type:</p>
+<dl class="docutils">
+<dt>FORCE_SENSOR</dt>
+<dd>Value of force sensor.</dd>
+<dt>RATE_GYRO_SENSOR</dt>
+<dd>Value of rate gyro sensor.</dd>
+<dt>ACCELERATION_SENSOR</dt>
+<dd>Value of acceleration sensor.</dd>
+<dt>RANGE_SENSOR</dt>
+<dd>Value of range sensor.</dd>
+<dt>VISION_SENSOR</dt>
+<dd>Value of vision sensor.</dd>
+<dt>POINT_CLOUD</dt>
+<dd>Value of point cloud.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="grxcollisionpairitem">
+<h3>GrxCollisionPairItem<a class="headerlink" href="#grxcollisionpairitem" title="Permalink to this headline">¶</a></h3>
+<p>GrxCollisionPairItem can specify following properties:</p>
+<dl class="docutils">
+<dt>objectName1</dt>
+<dd>Specifies one object name to detect collision.</dd>
+<dt>objectName2</dt>
+<dd>Specifies opponent object name to detect collision.</dd>
+<dt>jointName1</dt>
+<dd>Specifies joint name on one object to detect collision. If not specified, whole the joints of the object body is detected.</dd>
+<dt>jointName2</dt>
+<dd>Specifies joint name on opponent object to detect collision. If not specified, whole the joints of the object body is detected.</dd>
+<dt>slidingFriction</dt>
+<dd>Specifies sliding friction between the objects.</dd>
+<dt>staticFriction</dt>
+<dd>Specifies static friction between the objects.</dd>
+<dt>cullingThresh</dt>
+<dd>Specifies culling threshold.</dd>
+<dt>Restitution</dt>
+<dd>Specifies restitution coefficient.</dd>
+</dl>
+</div>
+<div class="section" id="grxworldstateitem">
+<h3>GrxWorldStateItem<a class="headerlink" href="#grxworldstateitem" title="Permalink to this headline">¶</a></h3>
+<p>GrxWorldStateItem can specify following properties:</p>
+<dl class="docutils">
+<dt>totalTime</dt>
+<dd>Specify total time of simulation.</dd>
+<dt>timeStep</dt>
+<dd>Specify simulation time step.</dd>
+<dt>realTime</dt>
+<dd>If &#8220;true&#8221; synchronize to real world time.</dd>
+<dt>gravity</dt>
+<dd>Specify gravity power.</dd>
+<dt>method</dt>
+<dd>If &#8220;EULER&#8221; use euler method. Other, use runge-kutta.</dd>
+<dt>integrate</dt>
+<dd>If &#8220;false&#8221; use kinematics only mode.</dd>
+</dl>
+</div>
+<div class="section" id="grxpythonscriptitem">
+<h3>GrxPythonScriptItem<a class="headerlink" href="#grxpythonscriptitem" title="Permalink to this headline">¶</a></h3>
+<p>GrxPythonScriptItem can specify following properties:</p>
+<dl class="docutils">
+<dt>name</dt>
+<dd>Specify name of the script item.</dd>
+<dt>url</dt>
+<dd>Specify url of the python script.</dd>
+</dl>
+</div>
+<div class="section" id="grx3dview">
+<h3>Grx3DView<a class="headerlink" href="#grx3dview" title="Permalink to this headline">¶</a></h3>
+<p>Grx3DViewItem can specify following properties:</p>
+<dl class="docutils">
+<dt>showScale</dt>
+<dd>Show scale in simulation screen.</dd>
+<dt>showCoM</dt>
+<dd>Show center of mass in simulation screen.</dd>
+<dt>showCoMonFloor</dt>
+<dd>Show center of mass on the floor in simulation screen.</dd>
+<dt>showCollision</dt>
+<dd>Visualize collision points in simulation screen.</dd>
+<dt>eyeHomePosition</dt>
+<dd>Set view angle in simulation screen.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python.html" class="btn btn-neutral float-right" title="Scripting in Python"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="components.html" class="btn btn-neutral" title="Components"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, AIST.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

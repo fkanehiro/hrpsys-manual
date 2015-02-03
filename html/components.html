@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Components &mdash; hrpsys-base manual 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/breathe.css" type="text/css" />
+  
+    <link rel="top" title="hrpsys-base manual 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Simulator" href="simulator.html"/>
+        <link rel="prev" title="Architecture" href="architecture.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> hrpsys-base manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#image-processing-components">Image processing components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#robot-control-components">Robot control components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="simulator.html#hrpsys-simulator-command">hrpsys-simulator command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulator.html#hrpsys-simulator-python-command">hrpsys-simulator-python command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulator.html#hrpsys-simulator-jython-command">hrpsys-simulator-jython command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulator.html#xml-project-file-format">XML project file format</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Scripting in Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python.html#hrpsys-hrpsysext">hrpsys.hrpsysext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#hrpsys-rtm">hrpsys.rtm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Apply to actual hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#replace-the-virtual-device-component-to-real-device-component">Replace the virtual device component to real device component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#create-interface-for-your-own-robot">Create interface for your own robot</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">hrpsys-base manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Components</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/components.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="components">
+<h1>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h1>
+<p>hrpsys-base comes with various components. In this section, we will explain part of it.</p>
+<p>For full list of components, please see following url:</p>
+<p><a class="reference external" href="http://fkanehiro.github.io/hrpsys-base/">http://fkanehiro.github.io/hrpsys-base/</a></p>
+<p>In this document, we use following convention to describe the component structure:</p>
+<p class="graphviz">
+digraph comp {
+   rankdir=LR;
+   comp [shape=Mrecord, label=&quot;Component name\n[configuration parameter]&quot;];
+   p1 [shape=plaintext, label=&quot;Data type&quot;];
+   p2 [shape=plaintext, label=&quot;Service&quot;];
+   p3 [shape=plaintext, label=&quot;Data type&quot;];
+   p1 -&gt; comp [label=&quot;Port name&quot;];
+   p2 -&gt; comp [label=&quot;Service name&quot;, style=dashed];
+   comp -&gt; p3 [label=&quot;Outport name&quot;];
+}</p>
+<div class="section" id="image-processing-components">
+<h2>Image processing components<a class="headerlink" href="#image-processing-components" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cameraimageviewer">
+<h3>CameraImageViewer<a class="headerlink" href="#cameraimageviewer" title="Permalink to this headline">¶</a></h3>
+<p>Open OpenCV highgui window to visualize the image captured by virtual of real camera.</p>
+<p class="graphviz">
+digraph comp {
+   rankdir=LR;
+   comp [shape=Mrecord, label=&quot;CameraImageViewer&quot;];
+   p1 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
+   p1 -&gt; comp [label=&quot;imageIn&quot;];
+}</p>
+</div>
+<div class="section" id="cameracaptureservice">
+<h3>CameraCaptureService<a class="headerlink" href="#cameracaptureservice" title="Permalink to this headline">¶</a></h3>
+<p>Filter to switch ON/OFF the image stream.</p>
+<p class="graphviz">
+digraph comp {
+   rankdir=LR;
+   comp [shape=Mrecord, label=&quot;CameraCaptureService&quot;];
+   p1 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
+   p2 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
+   s [shape=plaintext, label=&quot;Img::CameraCaptureService&quot;];
+   p1 -&gt; comp [label=&quot;imageIn&quot;];
+   comp -&gt; p2 [label=&quot;imageOut&quot;];
+   s -&gt; comp [label=&quot;service0&quot;, style=dashed];
+}</p>
+<p>See <a class="reference external" href="http://fkanehiro.github.io/hrpsys-base/da/dad/interfaceImg_1_1CameraCaptureService.html">this page</a> for detail of the service.</p>
+</div>
+<div class="section" id="rgb2gray">
+<h3>RGB2Gray<a class="headerlink" href="#rgb2gray" title="Permalink to this headline">¶</a></h3>
+<p>Convert RGB image to grayscale.</p>
+<p class="graphviz">
+digraph comp {
+   rankdir=LR;
+   comp [shape=Mrecord, label=&quot;RGB2Gray&quot;];
+   p1 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
+   p2 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
+   p1 -&gt; comp [label=&quot;rgb&quot;];
+   comp -&gt; p2 [label=&quot;gray&quot;];
+}</p>
+</div>
+<div class="section" id="resizeimage">
+<h3>ResizeImage<a class="headerlink" href="#resizeimage" title="Permalink to this headline">¶</a></h3>
+<p>Resize the input image with the given scale parameter.</p>
+<p class="graphviz">
+digraph comp {
+   rankdir=LR;
+   comp [shape=Mrecord, label=&quot;ResizeImage\n[scale]&quot;];
+   p1 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
+   p2 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
+   p1 -&gt; comp [label=&quot;original&quot;];
+   comp -&gt; p2 [label=&quot;resized&quot;];
+}</p>
+</div>
+<div class="section" id="videocapture">
+<h3>VideoCapture<a class="headerlink" href="#videocapture" title="Permalink to this headline">¶</a></h3>
+<p>Capture the image from hardware device using v4l API.</p>
+<p class="graphviz">
+digraph comp {
+   rankdir=LR;
+   comp [shape=Mrecord, label=&quot;VideoCapture\n[initialMode, devIds,\nwidth, height\nframeRate]&quot;];
+   p1 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
+   p2 [shape=plaintext, label=&quot;Img::TimedMultiCameraImage&quot;];
+   s [shape=plaintext, label=&quot;Img::CameraCaptureService&quot;];
+   comp -&gt; p1 [label=&quot;CameraImage&quot;];
+   comp -&gt; p2 [label=&quot;MultiCameraImages&quot;];
+   s -&gt; comp [label=&quot;CameraCaptureService&quot;, style=dashed];
+}</p>
+<p>This component has following configuration parameters:</p>
+<dl class="docutils">
+<dt>initialMode</dt>
+<dd>If set as &#8220;continuous&#8221; start capture on activation. Not start if not set (default: &#8220;continuous&#8221;).</dd>
+<dt>devIds</dt>
+<dd>Specify v4l device ID. If multiple IDs are set, synchronous capture will be applied (default &#8220;0&#8221;).</dd>
+<dt>width</dt>
+<dd>Capturing width (default: &#8220;640&#8221;).</dd>
+<dt>height</dt>
+<dd>Capturing height (default: &#8220;480&#8221;).</dd>
+<dt>frameRate</dt>
+<dd>Frame rate (default: &#8220;1&#8221;).</dd>
+</dl>
+<p>Captured image will be output from CameraImage port, but if devIds are set for multiple devices MultiCameraImages port will be used for output.</p>
+<p>Capturing can be also controlled as service, see <a class="reference external" href="http://fkanehiro.github.io/hrpsys-base/da/dad/interfaceImg_1_1CameraCaptureService.html">this page</a> for detail of the service.</p>
+</div>
+</div>
+<div class="section" id="robot-control-components">
+<h2>Robot control components<a class="headerlink" href="#robot-control-components" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sequenceplayer">
+<h3>SequencePlayer<a class="headerlink" href="#sequenceplayer" title="Permalink to this headline">¶</a></h3>
+<p>Play motion patterns. Motion patterns can be list of each joint angles, list of keyframes or it also has inverse kinematics function to automatically estimate each joint angles given the list of target positions.</p>
+<p>See <a class="reference external" href="http://fkanehiro.github.io/hrpsys-base/dd/d91/SequencePlayer.html">this page</a> for details.</p>
+<p class="graphviz">
+digraph comp {
+   rankdir=LR;
+   comp [shape=Mrecord, label=&quot;SequencePlayer\n[debugLevel]&quot;];
+   qInit [shape=plaintext, label=&quot;RTC::TimedDoubleSeq&quot;];
+   basePosInit [shape=plaintext, label=&quot;RTC::TimedPoint3D&quot;];
+   baseRpyInit [shape=plaintext, label=&quot;RTC::TimedOrientation3D&quot;];
+   zmpRefInit [shape=plaintext, label=&quot;RTC::TimedPoint3D&quot;];
+   qRef [shape=plaintext, label=&quot;RTC::TimedDoubleSeq&quot;];
+   tqRef [shape=plaintext, label=&quot;RTC::TimedDoubleSeq&quot;];
+   zmpRef [shape=plaintext, label=&quot;RTC::TimedPoint3D&quot;];
+   accRef [shape=plaintext, label=&quot;RTC::TimedAcceleration3D&quot;];
+   basePos [shape=plaintext, label=&quot;RTC::TimedPoint3D&quot;];
+   baseRpy [shape=plaintext, label=&quot;RTC::TimedOrientation3D&quot;];
+   s [shape=plaintext, label=&quot;OpenHRP::SequencePlayerService&quot;];
+   qInit -&gt; comp [label=&quot;qInit&quot;];
+   basePosInit -&gt; comp [label=&quot;basePosInit&quot;];
+   baseRpyInit -&gt; comp [label=&quot;baseRpyInit&quot;];
+   zmpRefInit -&gt; comp [label=&quot;zmpInit&quot;];
+   comp -&gt; qRef [label=&quot;qRef&quot;];
+   comp -&gt; tqRef [label=&quot;tqRef&quot;];
+   comp -&gt; zmpRef [label=&quot;zmpRef&quot;];
+   comp -&gt; accRef [label=&quot;accRef&quot;];
+   comp -&gt; basePos [label=&quot;basePos&quot;];
+   comp -&gt; baseRpy [label=&quot;baseRpy&quot;];
+   s -&gt; comp [label=&quot;service0&quot;, style=dashed];
+}</p>
+</div>
+<div class="section" id="servocontroller">
+<h3>ServoController<a class="headerlink" href="#servocontroller" title="Permalink to this headline">¶</a></h3>
+<p>Control Futaba serial servo hardware.</p>
+<p class="graphviz">
+digraph comp {
+   rankdir=LR;
+   comp [shape=Mrecord, label=&quot;ServoController\n[servo.devname, servo.id,\nservo.offset, servo.dir]&quot;];
+   s [shape=plaintext, label=&quot;OpenHRP::ServoControllerService&quot;];
+   s -&gt; comp [label=&quot;service0&quot;, style=dashed];
+}</p>
+<p>This component has following configuration parameters:</p>
+<dl class="docutils">
+<dt>servo.devname</dt>
+<dd>Device same of serial interface. Should be set to actual configuration such as &#8220;/dev/serusb1&#8221; (default: none).</dd>
+<dt>servo.id</dt>
+<dd>IDs of servo devices. Set as comma separated values (default: none).</dd>
+<dt>servo.offset</dt>
+<dd>Offset given to each servo devices (default: none).</dd>
+<dt>servo.dir</dt>
+<dd>Set direction (1 or -1) of each servo devices (default: none).</dd>
+</dl>
+<p>Servos are controlled as service, see <a class="reference external" href="http://fkanehiro.github.io/hrpsys-base/d1/d5c/ServoController.html">this page</a> for detail of the service.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="simulator.html" class="btn btn-neutral float-right" title="Simulator"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="architecture.html" class="btn btn-neutral" title="Architecture"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, AIST.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
