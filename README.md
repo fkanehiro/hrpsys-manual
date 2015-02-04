@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fkanehiro/hrpsys-manual.svg?branch=master)](https://travis-ci.org/fkanehiro/hrpsys-manual)
+
 Documentation project for hrpsys-base
 
 To generate the document:
