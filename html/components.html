@@ -124,7 +124,7 @@
 <p><a class="reference external" href="http://fkanehiro.github.io/hrpsys-base/">http://fkanehiro.github.io/hrpsys-base/</a></p>
 <p>In this document, we use following convention to describe the component structure:</p>
 <p class="graphviz">
-digraph comp {
+<img src="_images/graphviz-2ca00876901a8eddedd349e50fba96236fb14efc.png" alt="digraph comp {
    rankdir=LR;
    comp [shape=Mrecord, label=&quot;Component name\n[configuration parameter]&quot;];
    p1 [shape=plaintext, label=&quot;Data type&quot;];
@@ -133,25 +133,27 @@ digraph comp {
    p1 -&gt; comp [label=&quot;Port name&quot;];
    p2 -&gt; comp [label=&quot;Service name&quot;, style=dashed];
    comp -&gt; p3 [label=&quot;Outport name&quot;];
-}</p>
+}" />
+</p>
 <div class="section" id="image-processing-components">
 <h2>Image processing components<a class="headerlink" href="#image-processing-components" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="cameraimageviewer">
 <h3>CameraImageViewer<a class="headerlink" href="#cameraimageviewer" title="Permalink to this headline">¶</a></h3>
 <p>Open OpenCV highgui window to visualize the image captured by virtual of real camera.</p>
 <p class="graphviz">
-digraph comp {
+<img src="_images/graphviz-db4ef0b5244839770e62baf7ba569ba1399613f0.png" alt="digraph comp {
    rankdir=LR;
    comp [shape=Mrecord, label=&quot;CameraImageViewer&quot;];
    p1 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
    p1 -&gt; comp [label=&quot;imageIn&quot;];
-}</p>
+}" />
+</p>
 </div>
 <div class="section" id="cameracaptureservice">
 <h3>CameraCaptureService<a class="headerlink" href="#cameracaptureservice" title="Permalink to this headline">¶</a></h3>
 <p>Filter to switch ON/OFF the image stream.</p>
 <p class="graphviz">
-digraph comp {
+<img src="_images/graphviz-2cb53d39d206cbb17de9f8f3f533205dab95b06b.png" alt="digraph comp {
    rankdir=LR;
    comp [shape=Mrecord, label=&quot;CameraCaptureService&quot;];
    p1 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
@@ -160,40 +162,43 @@ digraph comp {
    p1 -&gt; comp [label=&quot;imageIn&quot;];
    comp -&gt; p2 [label=&quot;imageOut&quot;];
    s -&gt; comp [label=&quot;service0&quot;, style=dashed];
-}</p>
+}" />
+</p>
 <p>See <a class="reference external" href="http://fkanehiro.github.io/hrpsys-base/da/dad/interfaceImg_1_1CameraCaptureService.html">this page</a> for detail of the service.</p>
 </div>
 <div class="section" id="rgb2gray">
 <h3>RGB2Gray<a class="headerlink" href="#rgb2gray" title="Permalink to this headline">¶</a></h3>
 <p>Convert RGB image to grayscale.</p>
 <p class="graphviz">
-digraph comp {
+<img src="_images/graphviz-938af82ac9908ac59baf54ad3e9500a4d4349142.png" alt="digraph comp {
    rankdir=LR;
    comp [shape=Mrecord, label=&quot;RGB2Gray&quot;];
    p1 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
    p2 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
    p1 -&gt; comp [label=&quot;rgb&quot;];
    comp -&gt; p2 [label=&quot;gray&quot;];
-}</p>
+}" />
+</p>
 </div>
 <div class="section" id="resizeimage">
 <h3>ResizeImage<a class="headerlink" href="#resizeimage" title="Permalink to this headline">¶</a></h3>
 <p>Resize the input image with the given scale parameter.</p>
 <p class="graphviz">
-digraph comp {
+<img src="_images/graphviz-95fce17233411594d75888957e7bd7b80afd0845.png" alt="digraph comp {
    rankdir=LR;
    comp [shape=Mrecord, label=&quot;ResizeImage\n[scale]&quot;];
    p1 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
    p2 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
    p1 -&gt; comp [label=&quot;original&quot;];
    comp -&gt; p2 [label=&quot;resized&quot;];
-}</p>
+}" />
+</p>
 </div>
 <div class="section" id="videocapture">
 <h3>VideoCapture<a class="headerlink" href="#videocapture" title="Permalink to this headline">¶</a></h3>
 <p>Capture the image from hardware device using v4l API.</p>
 <p class="graphviz">
-digraph comp {
+<img src="_images/graphviz-059ba469cc354a3955d9c782c9fdc1cfee7d8ea9.png" alt="digraph comp {
    rankdir=LR;
    comp [shape=Mrecord, label=&quot;VideoCapture\n[initialMode, devIds,\nwidth, height\nframeRate]&quot;];
    p1 [shape=plaintext, label=&quot;Img::TimedCameraImage&quot;];
@@ -202,7 +207,8 @@ digraph comp {
    comp -&gt; p1 [label=&quot;CameraImage&quot;];
    comp -&gt; p2 [label=&quot;MultiCameraImages&quot;];
    s -&gt; comp [label=&quot;CameraCaptureService&quot;, style=dashed];
-}</p>
+}" />
+</p>
 <p>This component has following configuration parameters:</p>
 <dl class="docutils">
 <dt>initialMode</dt>
@@ -227,7 +233,7 @@ digraph comp {
 <p>Play motion patterns. Motion patterns can be list of each joint angles, list of keyframes or it also has inverse kinematics function to automatically estimate each joint angles given the list of target positions.</p>
 <p>See <a class="reference external" href="http://fkanehiro.github.io/hrpsys-base/dd/d91/SequencePlayer.html">this page</a> for details.</p>
 <p class="graphviz">
-digraph comp {
+<img src="_images/graphviz-97da03063883badfc793b41be98d0ffbaeb80723.png" alt="digraph comp {
    rankdir=LR;
    comp [shape=Mrecord, label=&quot;SequencePlayer\n[debugLevel]&quot;];
    qInit [shape=plaintext, label=&quot;RTC::TimedDoubleSeq&quot;];
@@ -252,18 +258,20 @@ digraph comp {
    comp -&gt; basePos [label=&quot;basePos&quot;];
    comp -&gt; baseRpy [label=&quot;baseRpy&quot;];
    s -&gt; comp [label=&quot;service0&quot;, style=dashed];
-}</p>
+}" />
+</p>
 </div>
 <div class="section" id="servocontroller">
 <h3>ServoController<a class="headerlink" href="#servocontroller" title="Permalink to this headline">¶</a></h3>
 <p>Control Futaba serial servo hardware.</p>
 <p class="graphviz">
-digraph comp {
+<img src="_images/graphviz-62bbecce3d7969ea817125277affcf4c48556bd0.png" alt="digraph comp {
    rankdir=LR;
    comp [shape=Mrecord, label=&quot;ServoController\n[servo.devname, servo.id,\nservo.offset, servo.dir]&quot;];
    s [shape=plaintext, label=&quot;OpenHRP::ServoControllerService&quot;];
    s -&gt; comp [label=&quot;service0&quot;, style=dashed];
-}</p>
+}" />
+</p>
 <p>This component has following configuration parameters:</p>
 <dl class="docutils">
 <dt>servo.devname</dt>

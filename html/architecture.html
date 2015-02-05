@@ -122,7 +122,7 @@
 <p>hrpsys-base is a set of reusable components but also an environment to compose robotic applications integrated with physics simulator to test the applications.</p>
 <p>Overall architecture of hrpsys-base is as follows:</p>
 <p class="graphviz">
-digraph foo {
+<img src="_images/graphviz-f1df7befb6857ebfec16db410705da4794fcd45e.png" alt="digraph foo {
    components [label=&quot;Collection of components&quot;]
    xml [label=&quot;XML based\nsystem composer&quot;]
    python [label=&quot;Python based\nsystem composer&quot;]
@@ -134,7 +134,8 @@ digraph foo {
    python -&gt; simulator
    xml -&gt; application
    python -&gt; application
-}</p>
+}" />
+</p>
 <p>Collection of components is implemented using OpenRTM-aist (<a class="reference external" href="http://openrtm.org/">http://openrtm.org/</a>) described in <a class="reference internal" href="components.html"><em>Components</em></a>.</p>
 <p>XML based system composer use XML based configuration file to compose the system and run the physics simulation (described in <a class="reference internal" href="simulator.html"><em>Simulator</em></a>).</p>
 <p>Python script can also be used to compose the system and configure the physics simulation (described in <a class="reference internal" href="python.html"><em>Scripting in Python</em></a>).</p>

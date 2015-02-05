@@ -122,7 +122,7 @@
 <p>hrpsys-baseは再利用可能なコンポーネントを多数収録するだけでなく、それらを接続しロボットアプリケーションを構築するための構築環境を提供します。また、構築したアプリケーションのテストに必要な物理シミュレーションも統合されています。</p>
 <p>hrpsys-baseのアーキテクチャを以下に示します:</p>
 <p class="graphviz">
-digraph foo {
+<img src="_images/graphviz-f1df7befb6857ebfec16db410705da4794fcd45e.png" alt="digraph foo {
    components [label=&quot;Collection of components&quot;]
    xml [label=&quot;XML based\nsystem composer&quot;]
    python [label=&quot;Python based\nsystem composer&quot;]
@@ -134,7 +134,8 @@ digraph foo {
    python -&gt; simulator
    xml -&gt; application
    python -&gt; application
-}</p>
+}" />
+</p>
 <p>コンポーネント集はOpenRTM-aist (<a class="reference external" href="http://openrtm.org/">http://openrtm.org/</a>) を使って実装されています（<a class="reference internal" href="components.html"><em>コンポーネント</em></a>）。</p>
 <p>XMLベースのシステム構築ツールはXML形式の設定ファイルによってシステムを構築し物理シミュレーションを実行します（<a class="reference internal" href="simulator.html"><em>シミュレータ</em></a>）。</p>
 <p>システム構築と物理シミュレーションの実行にはPythonスクリプトを使うこともできます（<a class="reference internal" href="python.html"><em>Pythonを使ったスクリプティング</em></a>）。</p>
