@@ -4,7 +4,7 @@ python:
   - "2.7"
 env:
   global:
-    - secure: "KOPwrRNRTllhu7rrOcNm4VRjwj+CAyWZK8alvVyh3xSEiW1izR7ZggFm1sstjkPDEzH4Yv3hSFazcH9S+umRt75ZeTU54uZxMrADeKpfIBSjpBfxv/4CRK3xQTTTgqK9tRhtIKzRgQ7VW+jZux0V6Dagk7/4KbbpBErBfxj7wYk="
+    - secure: "DiDyTj0UYcuhK3U1xGhGrVv+rHLM/Rl/rM3B+8qZSELASUrO7ht8sUssPMh5rtkNWXvea+/VpO79Hta5ypJ2zJE/EhkPaahx8YH1/HQiIoQzhWTPKawlx7E9xd2SIB41U+R59nCwzHbmG2PwEZSIOJnMyh20HFlJQ4o6TgkLYzo="
 script: source .travis.sh
 after_success:
   - set +x
