@@ -14,6 +14,7 @@
 
 import sys
 import os
+import subprocess
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -269,7 +270,8 @@ texinfo_documents = [
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
 
-breathe_projects = { "hrpsys-base": "/home/yosuke/hrpsys-base/doc/xml/" }
+hrpsys_prefix = subprocess.check_output(["pkg-config", "hrpsys-base", "--variable=prefix"]).strip()
+breathe_projects = { "hrpsys-base": hrpsys_prefix + "/share/doc/hrpsys/base/xml/" }
 breathe_default_project = "hrpsys-base"
 
 locale_dirs = ['locale/']
