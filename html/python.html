@@ -74,7 +74,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Scripting in Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#hrpsys-hrpsysext">hrpsys.hrpsysext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-hrpsys.hrpsysext">hrpsys.hrpsysext</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hrpsys-rtm">hrpsys.rtm</a></li>
 </ul>
 </li>
@@ -119,74 +119,668 @@
             
   <div class="section" id="scripting-in-python">
 <h1>Scripting in Python<a class="headerlink" href="#scripting-in-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="hrpsys-hrpsysext">
-<h2>hrpsys.hrpsysext<a class="headerlink" href="#hrpsys-hrpsysext" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-hrpsys.hrpsysext">
+<span id="hrpsys-hrpsysext"></span><h2>hrpsys.hrpsysext<a class="headerlink" href="#module-hrpsys.hrpsysext" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="hrpsys.hrpsysext.Body">
+<em class="property">class </em><tt class="descclassname">hrpsys.hrpsysext.</tt><tt class="descname">Body</tt><a class="headerlink" href="#hrpsys.hrpsysext.Body" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Body.R">
+<tt class="descname">R</tt><a class="headerlink" href="#hrpsys.hrpsysext.Body.R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.calcCM">
+<tt class="descname">calcCM</tt><big>(</big><em>(Body)arg1</em><big>)</big> &rarr; object :<a class="headerlink" href="#hrpsys.hrpsysext.Body.calcCM" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>_object* calcCM(PyBody {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.calcForwardKinematics">
+<tt class="descname">calcForwardKinematics</tt><big>(</big><em>(Body)arg1</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Body.calcForwardKinematics" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void calcForwardKinematics(PyBody {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.calcTotalMass">
+<tt class="descname">calcTotalMass</tt><big>(</big><em>(Body)arg1</em><big>)</big> &rarr; float :<a class="headerlink" href="#hrpsys.hrpsysext.Body.calcTotalMass" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>double calcTotalMass(PyBody {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.creteInPort">
+<tt class="descname">creteInPort</tt><big>(</big><em>(Body)arg1</em>, <em>(str)arg2</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Body.creteInPort" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void creteInPort(PyBody {lvalue},std::string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.creteOutPort">
+<tt class="descname">creteOutPort</tt><big>(</big><em>(Body)arg1</em>, <em>(str)arg2</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Body.creteOutPort" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void creteOutPort(PyBody {lvalue},std::string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.joint">
+<tt class="descname">joint</tt><big>(</big><em>(Body)arg1</em>, <em>(int)arg2</em><big>)</big> &rarr; Link :<a class="headerlink" href="#hrpsys.hrpsysext.Body.joint" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>PyLink* joint(PyBody {lvalue},int)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.joints">
+<tt class="descname">joints</tt><big>(</big><em>(Body)arg1</em><big>)</big> &rarr; object :<a class="headerlink" href="#hrpsys.hrpsysext.Body.joints" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>_object* joints(PyBody {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.link">
+<tt class="descname">link</tt><big>(</big><em>(Body)arg1</em>, <em>(str)arg2</em><big>)</big> &rarr; Link :<a class="headerlink" href="#hrpsys.hrpsysext.Body.link" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>PyLink* link(PyBody {lvalue},std::string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.links">
+<tt class="descname">links</tt><big>(</big><em>(Body)arg1</em><big>)</big> &rarr; object :<a class="headerlink" href="#hrpsys.hrpsysext.Body.links" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>_object* links(PyBody {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Body.name">
+<tt class="descname">name</tt><a class="headerlink" href="#hrpsys.hrpsysext.Body.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.numJoints">
+<tt class="descname">numJoints</tt><big>(</big><em>(Body)arg1</em><big>)</big> &rarr; int :<a class="headerlink" href="#hrpsys.hrpsysext.Body.numJoints" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>int numJoints(PyBody {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.numLinks">
+<tt class="descname">numLinks</tt><big>(</big><em>(Body)arg1</em><big>)</big> &rarr; int :<a class="headerlink" href="#hrpsys.hrpsysext.Body.numLinks" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>int numLinks(PyBody {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Body.p">
+<tt class="descname">p</tt><a class="headerlink" href="#hrpsys.hrpsysext.Body.p" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Body.q">
+<tt class="descname">q</tt><a class="headerlink" href="#hrpsys.hrpsysext.Body.q" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.rootLink">
+<tt class="descname">rootLink</tt><big>(</big><em>(Body)arg1</em><big>)</big> &rarr; Link :<a class="headerlink" href="#hrpsys.hrpsysext.Body.rootLink" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>PyLink* rootLink(PyBody {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Body.totalMass">
+<tt class="descname">totalMass</tt><big>(</big><em>(Body)arg1</em><big>)</big> &rarr; float :<a class="headerlink" href="#hrpsys.hrpsysext.Body.totalMass" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>double totalMass(PyBody {lvalue})</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="hrpsys.hrpsysext.Link">
+<em class="property">class </em><tt class="descclassname">hrpsys.hrpsysext.</tt><tt class="descname">Link</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.I">
+<tt class="descname">I</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.I" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.Ir">
+<tt class="descname">Ir</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.Ir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.R">
+<tt class="descname">R</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.Rs">
+<tt class="descname">Rs</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.Rs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.a">
+<tt class="descname">a</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.a" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Link.addChildLink">
+<tt class="descname">addChildLink</tt><big>(</big><em>(Link)arg1</em>, <em>(str)arg2</em><big>)</big> &rarr; Link :<a class="headerlink" href="#hrpsys.hrpsysext.Link.addChildLink" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>PyLink* addChildLink(PyLink {lvalue},std::string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Link.addCube">
+<tt class="descname">addCube</tt><big>(</big><em>(Link)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em><big>)</big> &rarr; Shape :<a class="headerlink" href="#hrpsys.hrpsysext.Link.addCube" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>PyShape* addCube(PyLink {lvalue},double,double,double)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Link.addShapeFromFile">
+<tt class="descname">addShapeFromFile</tt><big>(</big><em>(Link)arg1</em>, <em>(str)arg2</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Link.addShapeFromFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void addShapeFromFile(PyLink {lvalue},std::string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.b">
+<tt class="descname">b</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.c">
+<tt class="descname">c</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.c" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Link.children">
+<tt class="descname">children</tt><big>(</big><em>(Link)arg1</em><big>)</big> &rarr; object :<a class="headerlink" href="#hrpsys.hrpsysext.Link.children" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>_object* children(PyLink {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.d">
+<tt class="descname">d</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.ddq">
+<tt class="descname">ddq</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.ddq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.dq">
+<tt class="descname">dq</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.dq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.gearRatio">
+<tt class="descname">gearRatio</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.gearRatio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Link.highlight">
+<tt class="descname">highlight</tt><big>(</big><em>(Link)arg1</em>, <em>(bool)arg2</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Link.highlight" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void highlight(PyLink {lvalue},bool)</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.isHighGainMode">
+<tt class="descname">isHighGainMode</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.isHighGainMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.jointId">
+<tt class="descname">jointId</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.jointId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.jointType">
+<tt class="descname">jointType</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.jointType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.m">
+<tt class="descname">m</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.m" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.name">
+<tt class="descname">name</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.p">
+<tt class="descname">p</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.p" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Link.parent">
+<tt class="descname">parent</tt><big>(</big><em>(Link)arg1</em><big>)</big> &rarr; Link :<a class="headerlink" href="#hrpsys.hrpsysext.Link.parent" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>PyLink* parent(PyLink {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.q">
+<tt class="descname">q</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.q" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Link.shapes">
+<tt class="descname">shapes</tt><big>(</big><em>(Link)arg1</em><big>)</big> &rarr; object :<a class="headerlink" href="#hrpsys.hrpsysext.Link.shapes" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>_object* shapes(PyLink {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Link.showAxes">
+<tt class="descname">showAxes</tt><big>(</big><em>(Link)arg1</em>, <em>(bool)arg2</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Link.showAxes" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void showAxes(PyLink {lvalue},bool)</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.u">
+<tt class="descname">u</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.u" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.v">
+<tt class="descname">v</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.v" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Link.w">
+<tt class="descname">w</tt><a class="headerlink" href="#hrpsys.hrpsysext.Link.w" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="hrpsys.hrpsysext.Shape">
+<em class="property">class </em><tt class="descclassname">hrpsys.hrpsysext.</tt><tt class="descname">Shape</tt><a class="headerlink" href="#hrpsys.hrpsysext.Shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Shape.Rs">
+<tt class="descname">Rs</tt><a class="headerlink" href="#hrpsys.hrpsysext.Shape.Rs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Shape.b">
+<tt class="descname">b</tt><a class="headerlink" href="#hrpsys.hrpsysext.Shape.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Shape.diffuse">
+<tt class="descname">diffuse</tt><a class="headerlink" href="#hrpsys.hrpsysext.Shape.diffuse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="hrpsys.hrpsysext.Simulator">
+<em class="property">class </em><tt class="descclassname">hrpsys.hrpsysext.</tt><tt class="descname">Simulator</tt><big>(</big><em>(object)arg1</em><big>)</big><a class="headerlink" href="#hrpsys.hrpsysext.Simulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.addCollisionCheckPair">
+<tt class="descname">addCollisionCheckPair</tt><big>(</big><em>(Simulator)arg1</em>, <em>(Body)arg2</em>, <em>(Body)arg3</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.addCollisionCheckPair" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void addCollisionCheckPair(PySimulator {lvalue},PyBody*,PyBody*)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.bodies">
+<tt class="descname">bodies</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; object :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.bodies" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>_object* bodies(PySimulator {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.body">
+<tt class="descname">body</tt><big>(</big><em>(Simulator)arg1</em>, <em>(str)arg2</em><big>)</big> &rarr; Body :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.body" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>PyBody* body(PySimulator {lvalue},std::string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.capture">
+<tt class="descname">capture</tt><big>(</big><em>(Simulator)arg1</em>, <em>(str)arg2</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.capture" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void capture(PySimulator {lvalue},std::string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.clear">
+<tt class="descname">clear</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.clear" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void clear(PySimulator {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.createBody">
+<tt class="descname">createBody</tt><big>(</big><em>(Simulator)arg1</em>, <em>(str)arg2</em><big>)</big> &rarr; Body :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.createBody" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>PyBody* createBody(PySimulator {lvalue},std::string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.endless">
+<tt class="descname">endless</tt><big>(</big><em>(Simulator)arg1</em>, <em>(bool)arg2</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.endless" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void endless(PySimulator {lvalue},bool)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.initViewer">
+<tt class="descname">initViewer</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.initViewer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void initViewer(PySimulator {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.initialize">
+<tt class="descname">initialize</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void initialize(PySimulator {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.loadBody">
+<tt class="descname">loadBody</tt><big>(</big><em>(Simulator)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><big>)</big> &rarr; Body :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.loadBody" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>PyBody* loadBody(PySimulator {lvalue},std::string,std::string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.loadProject">
+<tt class="descname">loadProject</tt><big>(</big><em>(Simulator)arg1</em>, <em>(str)arg2</em><big>)</big> &rarr; bool :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.loadProject" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>bool loadProject(PySimulator {lvalue},std::string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.logLength">
+<tt class="descname">logLength</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; int :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.logLength" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>unsigned int logLength(PySimulator {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Simulator.maxLogLength">
+<tt class="descname">maxLogLength</tt><a class="headerlink" href="#hrpsys.hrpsysext.Simulator.maxLogLength" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.oneStep">
+<tt class="descname">oneStep</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; bool :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.oneStep" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>bool oneStep(PySimulator {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.pause">
+<tt class="descname">pause</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.pause" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void pause(PySimulator {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.play">
+<tt class="descname">play</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.play" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void play(PySimulator {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.realTime">
+<tt class="descname">realTime</tt><big>(</big><em>(Simulator)arg1</em>, <em>(bool)arg2</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.realTime" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void realTime(PySimulator {lvalue},bool)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.reset">
+<tt class="descname">reset</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.reset" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void reset(PySimulator {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Simulator.showSensors">
+<tt class="descname">showSensors</tt><a class="headerlink" href="#hrpsys.hrpsysext.Simulator.showSensors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.simulate">
+<tt class="descname">simulate</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.simulate" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void simulate(PySimulator {lvalue})</dd>
+</dl>
+</div></blockquote>
+<p>simulate( (Simulator)arg1, (float)arg2) -&gt; None :</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void simulate(PySimulator {lvalue},double)</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.start">
+<tt class="descname">start</tt><big>(</big><em>(Simulator)arg1</em>, <em>(float)arg2</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.start" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void start(PySimulator {lvalue},double)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.stop">
+<tt class="descname">stop</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.stop" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void stop(PySimulator {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Simulator.time">
+<tt class="descname">time</tt><a class="headerlink" href="#hrpsys.hrpsysext.Simulator.time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Simulator.timeStep">
+<tt class="descname">timeStep</tt><a class="headerlink" href="#hrpsys.hrpsysext.Simulator.timeStep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hrpsys.hrpsysext.Simulator.totalTime">
+<tt class="descname">totalTime</tt><a class="headerlink" href="#hrpsys.hrpsysext.Simulator.totalTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.useBBox">
+<tt class="descname">useBBox</tt><big>(</big><em>(Simulator)arg1</em>, <em>(bool)arg2</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.useBBox" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void useBBox(PySimulator {lvalue},bool)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.wait">
+<tt class="descname">wait</tt><big>(</big><em>(Simulator)arg1</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.wait" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void wait(PySimulator {lvalue})</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hrpsys.hrpsysext.Simulator.windowSize">
+<tt class="descname">windowSize</tt><big>(</big><em>(Simulator)arg1</em>, <em>(int)arg2</em><big>)</big> &rarr; None :<a class="headerlink" href="#hrpsys.hrpsysext.Simulator.windowSize" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>C++ signature :</dt>
+<dd>void windowSize(PySimulator {lvalue},int)</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="hrpsys-rtm">
 <h2>hrpsys.rtm<a class="headerlink" href="#hrpsys-rtm" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenfunction: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenclass: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find file: /home/yosuke/hrpsys-base/doc/xml/index.xml</p>
+<p class="last">doxygenclass: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
 </div>
 </div>
 </div>
