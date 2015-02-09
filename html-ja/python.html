@@ -718,70 +718,594 @@
 </div>
 <div class="section" id="hrpsys-rtm">
 <h2>hrpsys.rtm<a class="headerlink" href="#hrpsys-rtm" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1aef92d53c135298e4605bedf259af38d3"></span>def <tt class="descname">initCORBA</tt><big>(</big><big>)</big></dt>
+<dd><p>initialize ORB </p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1a3b2c9972eb9a412bcd33355fdc5c6ce2"></span>def <tt class="descname">getRootNamingContext</tt><big>(</big><big>)</big></dt>
+<dd><p>get root naming context </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>root naming context </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">corbaloc</span></tt> - <p>location of NamingService </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1a1c4e6aca9db7b1fd8a92039f2dafac82"></span>def <tt class="descname">findRTC</tt><big>(</big><big>)</big></dt>
+<dd><p>get RT component </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>an object of <a class="reference internal" href="#hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent"><em>RTcomponent</em></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">name</span></tt> - <p>name of the RT component </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">rnc</span></tt> - <p>root naming context. If it is not specified, global variable rootnc is used </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1acc26ba1ac498e4346054b9ba42a70aeb"></span>def <tt class="descname">findRTCmanager</tt><big>(</big><big>)</big></dt>
+<dd><p>get <a class="reference internal" href="#hrpsys-based2/d29/classpython_1_1rtm_1_1RTCmanager"><em>RTCmanager</em></a> </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>an object of <a class="reference internal" href="#hrpsys-based2/d29/classpython_1_1rtm_1_1RTCmanager"><em>RTCmanager</em></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">hostname</span></tt> - <p>hostname where rtcd is running </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">rnc</span></tt> - <p>root naming context. If it is not specified, global variable rootnc is used </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1a5246a4c813ee4596add354fa91ff8d80"></span>def <tt class="descname">findPort</tt><big>(</big><big>)</big></dt>
+<dd><p>get a port of RT component </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>IOR of the port if the port is found, None otherwise </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">rtc</span></tt> - <p>an object of <a class="reference internal" href="#hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent"><em>RTcomponent</em></a> </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">name</span></tt> - <p>name of the port </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1ae4521fb2ea4f768b84e70b5c30fd11f5"></span>def <tt class="descname">dataTypeOfPort</tt><big>(</big><big>)</big></dt>
+<dd><p>get data type of a port </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>data type </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">port</span></tt> - <p>IOR of port </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1abee1a2ec83b8aa91e0192b28c5df8b77"></span>def <tt class="descname">connectPorts</tt><big>(</big><big>)</big></dt>
+<dd><p>connect ports </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">outP</span></tt> - <p>IOR of outPort </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">inPs</span></tt> - <p>an IOR or a list of IORs of inPort </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">subscription</span></tt> - <p>subscription type. &#8220;flush&#8221;, &#8220;new&#8221; or &#8220;periodic&#8221; </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">dataflow</span></tt> - <p>dataflow type. &#8220;Push&#8221; or &#8220;Pull&#8221; </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">bufferlength</span></tt> - <p>length of data buffer </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">rate</span></tt> - <p>communication rate for periodic mode[Hz] </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1a11aac3e5321253ba381f54b60766eae5"></span>def <tt class="descname">isConnected</tt><big>(</big><big>)</big></dt>
+<dd><p>check two ports are connected or not </p>
+<p><dl class="docutils">
+<dt><strong>Return Value</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">True</span></tt> - <p>connected </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">False</span></tt> - <p>not connected </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1ad3521848787f77aa2ec58475ddaa2a26"></span>def <tt class="descname">disconnectPorts</tt><big>(</big><big>)</big></dt>
+<dd><p>disconnect ports </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">outP</span></tt> - <p>IOR of outPort </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">inP</span></tt> - <p>IOR of inPort </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1a9a23dfad317bf00f39d1a5d5f45064d9"></span>def <tt class="descname">writeDataPort</tt><big>(</big><big>)</big></dt>
+<dd><p>write data to a data port </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">port</span></tt> - <p>reference of data port </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">data</span></tt> - <p>data to be written </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">tm</span></tt> - <p>If disconnect==True, a connection to write data is disconnected after this time </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">disconnect</span></tt> - <p>If True, a connection is disconnected after tm and if not, the connection must be disconnected by a user </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1a2832f8f52d18a0c901a22dd00113236c"></span>def <tt class="descname">findService</tt><big>(</big><big>)</big></dt>
+<dd><p>get a service of RT component </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>IOR of the service </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">rtc</span></tt> - <p>IOR of RT component </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">port_name</span></tt> - <p>port name of the port which provides the service </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">type_name</span></tt> - <p>type name of the service </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">instance_name</span></tt> - <p>name of the service </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1a151943bbe84d2f5df3bfc054ca361107"></span>def <tt class="descname">readDataPort</tt><big>(</big><big>)</big></dt>
+<dd><p>read data from a data port </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>data </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">port</span></tt> - <p>reference of data port </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">timeout</span></tt> - <p>timeout[s] </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1a992041e0ffc30e6cc3af7296d3c08ccd"></span>def <tt class="descname">findObject</tt><big>(</big><big>)</big></dt>
+<dd><p>get IOR of the object </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>IOR of the object </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">name</span></tt> - <p>name of the object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">kind</span></tt> - <p>kind of the object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">rnc</span></tt> - <p>root naming context. If it is not specified, global variable rootnc is used </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based8/d70/namespacepython_1_1rtm_1a116d6ae4f2fff5f7c96a37d627170dfa"></span>def <tt class="descname">unbindObject</tt><big>(</big><big>)</big></dt>
+<dd><p>unbind an object reference </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">name</span></tt> - <p>name of the object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">kind</span></tt> - <p>kind of the object </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent"></span><em>class</em> <tt class="descname">python::rtm::RTcomponent</tt></dt>
+<dd><p>wrapper class of RT component </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1a6ff69918bf045fb07333ba478ce53ce6"></span>def <tt class="descname">__init__</tt><big>(</big><big>)</big></dt>
+<dd><p>constructor </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">ref</span></tt> - <p>IOR of RT component </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1ae1720315474f802bd24690227834927e"></span>def <tt class="descname">port</tt><big>(</big><big>)</big></dt>
+<dd><p>get IOR of port </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>IOR of the port </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">name</span></tt> - <p>name of the port </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1a1eced9d211ca2073d5c36372140ae94a"></span>def <tt class="descname">service</tt><big>(</big><big>)</big></dt>
+<dd><p>get IOR of the service </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>IOR of the service </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">instance_name</span></tt> - <p>instance name of the service </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">type_name</span></tt> - <p>type name of hte service </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">port_name</span></tt> - <p>port name which provides the service </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1a4005a43f910efb11ce714a006da6d6e7"></span>def <tt class="descname">setConfiguration</tt><big>(</big><big>)</big></dt>
+<dd><p>update default configuration set </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>True if all values are set correctly, False otherwise </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">nvlist</span></tt> - <p>list of pairs of name and value </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1a7b3e50828bebda6b6b5e562a9f51dc05"></span>def <tt class="descname">setProperty</tt><big>(</big><big>)</big></dt>
+<dd><p>update value of the default configuration set </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>True if all values are set correctly, False otherwise </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">name</span></tt> - <p>name of the property </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">value</span></tt> - <p>new value of the property </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1a340973f28a1642ff062c1e17c2824042"></span>def <tt class="descname">getProperty</tt><big>(</big><big>)</big></dt>
+<dd><p>get value of the property in the default configuration set </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>value of the property or None if the property is not found </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">name</span></tt> - <p>name of the property </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1a51e3de3494262b7110a46aa3a6b2857b"></span>def <tt class="descname">start</tt><big>(</big><big>)</big></dt>
+<dd><p>activate this component </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">ec</span></tt> - <p>execution context used to activate this component </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1a5388d4577d063ad6acb9b09a29ff44e1"></span>def <tt class="descname">stop</tt><big>(</big><big>)</big></dt>
+<dd><p>deactivate this component </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">ec</span></tt> - <p>execution context used to deactivate this component </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1a07cfdf85127640531d05cd21a37e6fcf"></span>def <tt class="descname">getLifeCycleState</tt><big>(</big><big>)</big></dt>
+<dd><p>get life cycle state of the main execution context </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>one of LifeCycleState value or None if the main execution context is not set </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">ec</span></tt> - <p>execution context from which life cycle state is obtained </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1af28c2afa9a0c73ab941c8d02ef3b4d6e"></span>def <tt class="descname">isActive</tt><big>(</big><big>)</big></dt>
+<dd><p>check the main execution context is active or not </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">ec</span></tt> - <p>execution context </p>
+</li>
+</ul>
+</dd>
+<dt><strong>Return Value</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">1</span></tt> - <p>this component is active </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">0</span></tt> - <p>this component is not active </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1a94e3af6991d4eb0b47fce287f27ca60d"></span>def <tt class="descname">isInactive</tt><big>(</big><big>)</big></dt>
+<dd><p>check the main execution context is inactive or not </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">ec</span></tt> - <p>execution context </p>
+</li>
+</ul>
+</dd>
+<dt><strong>Return Value</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">1</span></tt> - <p>this component is inactive </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">0</span></tt> - <p>this component is not inactive </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent_1aa1f41888cd93cfe10d6e86da6f13cec6"></span>def <tt class="descname">name</tt><big>(</big><big>)</big></dt>
+<dd><p>get instance name </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>instance name </dd>
+</dl>
+</p>
+</dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<span class="target" id="hrpsys-based2/d29/classpython_1_1rtm_1_1RTCmanager"></span><em>class</em> <tt class="descname">python::rtm::RTCmanager</tt></dt>
+<dd><p>wrapper class of <a class="reference internal" href="#hrpsys-based2/d29/classpython_1_1rtm_1_1RTCmanager"><em>RTCmanager</em></a> </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based2/d29/classpython_1_1rtm_1_1RTCmanager_1a319457883092cea7b070e8a99d4fe2b9"></span>def <tt class="descname">__init__</tt><big>(</big><big>)</big></dt>
+<dd><p>constructor </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">ref</span></tt> - <p>IOR of <a class="reference internal" href="#hrpsys-based2/d29/classpython_1_1rtm_1_1RTCmanager"><em>RTCmanager</em></a> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based2/d29/classpython_1_1rtm_1_1RTCmanager_1a861703ff5e8df0f042e15fd9a3c62014"></span>def <tt class="descname">load</tt><big>(</big><big>)</big></dt>
+<dd><p>load RT component factory </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">basename</span></tt> - <p>basename of the shared library </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">initfunc</span></tt> - <p>a function called when the shared library is loaded. If not specified, basename+&#8221;Init&#8221; is called. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based2/d29/classpython_1_1rtm_1_1RTCmanager_1accff4898230429d743a706f792a2376b"></span>def <tt class="descname">create</tt><big>(</big><big>)</big></dt>
+<dd><p>create an instance of RT component </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>an object of <a class="reference internal" href="#hrpsys-basedc/d21/classpython_1_1rtm_1_1RTcomponent"><em>RTcomponent</em></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">self</span></tt> - <p>this object </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">module</span></tt> - <p>name of RT component factory </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">name</span></tt> - <p>name of RT component instance </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based2/d29/classpython_1_1rtm_1_1RTCmanager_1ac36bd42c658c7a5ea871993686d7a99f"></span>def <tt class="descname">get_factory_names</tt><big>(</big><big>)</big></dt>
+<dd><p>get list of factory names </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>list of factory names </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based2/d29/classpython_1_1rtm_1_1RTCmanager_1a3512f5239e678dd90e76519ea4ca7125"></span>def <tt class="descname">get_components</tt><big>(</big><big>)</big></dt>
+<dd><p>get list of components </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>list of components </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="hrpsys-based2/d29/classpython_1_1rtm_1_1RTCmanager_1aa2a32b188d8d4398bafe053bce083d9b"></span>def <tt class="descname">restart</tt><big>(</big><big>)</big></dt>
+<dd><p>restart Manager </p>
+</dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenfunction: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenclass: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">doxygenclass: Cannot find file: /usr/share/doc/hrpsys/base/xml/index.xml</p>
-</div>
+</dd></dl>
+
 </div>
 </div>
 

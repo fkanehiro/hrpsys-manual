@@ -136,7 +136,7 @@
 <p>ロボットが上記のデバイスを使っていない場合、ハードウェアに対応した接続用のコードを書く必要があります。</p>
 <div class="section" id="iob-interface">
 <h3>IOBインタフェースの利用<a class="headerlink" href="#iob-interface" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>IOBは`ここ &lt;<a class="reference external" href="http://fkanehiro.github.io/hrpsys-base/de/ddc/iob_8h.html">http://fkanehiro.github.io/hrpsys-base/de/ddc/iob_8h.html</a>&gt;`_で定義されたハードウェア抽象化インタフェースです。</p>
+<p>IOBは <a class="reference external" href="http://fkanehiro.github.io/hrpsys-base/de/ddc/iob_8h.html">ここ</a> で定義されたハードウェア抽象化インタフェースです。</p>
 <p>このインターフェースを使うにはヘッダファイル&#8221;io/iob.h&#8221;をインクルードして定義に対応した各関数を実装してください。</p>
 <p>IOBの実装が終わったら、実装したIOBを&#8221;libhrpIO.so&#8221;という名前の共有ライブラリにコンパイルしてください。</p>
 <p>hrpsysでは仮想環境用のダミーhrpIOライブラリが用いられています。このダミーhrpIOライブラリを先ほどコンパイルしたものに置き換えることで実ロボットを駆動することができます。</p>
