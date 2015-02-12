@@ -126,7 +126,7 @@
 <div class="highlight-python"><div class="highlight"><pre>$ hrpsys-simulator [project file] [options]
 </pre></div>
 </div>
-<p><a href="#id1"><span class="problematic" id="id2">**</span></a>プロジェクトファイル**はシステムの設定を定義するXML形式のファイルです（あとで説明します）。</p>
+<p><strong>プロジェクトファイル</strong> はシステムの設定を定義するXML形式のファイルです（あとで説明します）。</p>
 <p>hrpsys-simulatorコマンドには以下のオプションがあります:</p>
 <dl class="option">
 <dt id="cmdoption-hrpsys-simulator-nodisplay">
@@ -223,13 +223,13 @@
 <div class="highlight-python"><div class="highlight"><pre>$ hrpsys-simulator-jython [project file] [jython script] [options]
 </pre></div>
 </div>
-<p><strong>project file</strong> はシステムの構成を定義するXML形式のファイルです（あとで説明します）。<strong>python script</strong> はシミュレーション開始時に実行されるjythonスクリプトです。</p>
+<p><strong>project file</strong> はシステムの構成を定義するXML形式のファイルです（あとで説明します）。 <strong>python script</strong> はシミュレーション開始時に実行されるjythonスクリプトです。</p>
 <p>hrpsys-simulator-jythonコマンドはhrpsys-simulatorと同じオプションを使うことができます。</p>
 <p>hrpsys-simulator-jythonコマンドは、システムとシミュレーションの初期化が終わったあと対話的に操作できるプロンプト画面に移行します。プロンプト画面からjythonコマンドを入力することでシミュレーションをインタラクティブに操作することができます。</p>
 </div>
 <div class="section" id="xml-project-file-format">
 <h2>XMLプロジェクトファイル<a class="headerlink" href="#xml-project-file-format" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>XML形式のプロジェクトファイルには複数の設定項目があります。各設定項目は**classアトリビュート**によって識別されます。hrpsys-simulatorには現在以下の設定タイプがあります。</p>
+<p>XML形式のプロジェクトファイルには複数の設定項目があります。各設定項目は <strong>classアトリビュート</strong> によって識別されます。hrpsys-simulatorには現在以下の設定タイプがあります。</p>
 <dl class="docutils">
 <dt>com.generalrobotix.ui.item.GrxRTSItem</dt>
 <dd><p class="first last">RTコンポーネントの初期化と接続を設定する</p>
@@ -253,7 +253,7 @@
 <p>com.generalrobotix.ui.grxui.GrxUIPerspectiveFactoryなど、その他の設定項目もありますが、それらはeclipseベースの旧OpenHRPシミュレータのための設定項目で互換性のために存在します。hrpsys-simulatorでは無視してください。</p>
 <div class="section" id="grxrtsitem">
 <h3>GrxRTSItem<a class="headerlink" href="#grxrtsitem" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><a href="#id1"><span class="problematic" id="id2">**</span></a>com.generalrobotix.ui.item.GrxRTSItem**設定項目では、&#8221;<em>.period&#8221;が各RTコンポーネントの実行周期を設定します。&#8221;</em>.factory&#8221;はコンポーネントのインスタンスを作成するのに用いられる共有ライブラリを設定します（詳細はあとで説明します）。&#8221;connection&#8221;はコンポーネント間の接続を設定します。</p>
+<p><strong>com.generalrobotix.ui.item.GrxRTSItem</strong> 設定項目では、&#8221;<em>.period&#8221;が各RTコンポーネントの実行周期を設定します。&#8221;</em>.factory&#8221;はコンポーネントのインスタンスを作成するのに用いられる共有ライブラリを設定します（詳細はあとで説明します）。&#8221;connection&#8221;はコンポーネント間の接続を設定します。</p>
 <p>以下は設定の例です:</p>
 <div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -275,7 +275,7 @@
 </div>
 <div class="section" id="grxmodelitem">
 <h3>GrxModelItem<a class="headerlink" href="#grxmodelitem" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><a href="#id1"><span class="problematic" id="id2">**</span></a>com.generalrobotix.ui.item.ModelItem**設定アイテムでは、以下の設定ができます。</p>
+<p><strong>com.generalrobotix.ui.item.ModelItem</strong> 設定アイテムでは、以下の設定ができます。</p>
 <div class="section" id="model-related-configuration">
 <h4>ロボットモデルに関する設定<a class="headerlink" href="#model-related-configuration" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>設定アイテム自身の&#8221;name&#8221;と&#8221;url&#8221;アトリビュートにはそれぞれ名前とモデルファイルの場所を設定します。</p>
@@ -283,7 +283,7 @@
 </div>
 <div class="section" id="joint-related-configuration">
 <h4>関節に関する設定<a class="headerlink" href="#joint-related-configuration" title="このヘッドラインへのパーマリンク">¶</a></h4>
-<p>The name &#8220;*.mode&#8221; is used to specify the mode of the joint. If value &#8220;HighGain&#8221; is set, the joint can be controlled either by angle, velocity or acceleration of the joint. If not specified, the joint will be configured to use torque mode.</p>
+<p>&#8220;*.mode&#8221;という名前の設定項目は、関節のモードを設定します。&#8221;HighGain&#8221;と設定されると、関節は角度、角速度、角加速度によって制御することができます。この設定が行われない場合、関節はトルクモードになります。</p>
 <p>&#8220;*.angle&#8221;という名前の設定項目は、初期の関節角を設定します。</p>
 <p>&#8220;*.velocity&#8221;という名前の設定項目は、初期の角速度を設定します。</p>
 <p>&#8220;*.angularVelocity&#8221;という名前の設定項目は、初期の各運動速度を設定します。</p>
